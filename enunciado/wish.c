@@ -29,11 +29,11 @@ const static struct
 
 
 void stringParse(char str[], char *array[30], int flagsNumber);
-void cdWish(char **args);
+void execute_cd(char **args);
 void error();
 void run(char *cmd[]);
 void wish();
-void pathWish(char *system_path_commands[], char *cmd[]);
+void execute_path(char *system_path_commands[], char *cmd[]);
 void batch(char *argv[]);
 void lineParse(char line[], char *array[30], int flagsNumber);
 
@@ -138,10 +138,10 @@ void wish()
             switch (command)
             {
             case cd:
-                cdWish(cmd);
+                execute_cd(cmd);
                 break;
             case path:
-                pathWish(system_path_commands, cmd);
+                execute_path(system_path_commands, cmd);
                   int directions = 0;
                 while (system_path_commands[directions] != NULL)
                 {
@@ -215,10 +215,10 @@ void batch(char *argv[])
             switch (command)
             {
             case cd:
-                cdWish(cmd);
+                execute_cd(cmd);
                 break;
             case path:
-                pathWish(system_path_commands, cmd);
+                execute_path(system_path_commands, cmd);
                   int directions = 0;
                 while (system_path_commands[directions] != NULL)
                 {
@@ -258,7 +258,7 @@ void batch(char *argv[])
     }
 }
 
-void cdWish(char **args)
+void execute_cd(char **args)
 {
 
     if (args[1] != NULL && args[2] == NULL)
@@ -287,7 +287,7 @@ void cdWish(char **args)
 };
 
 
-void pathWish(char *system_path_commands[], char *cmd[])
+void execute_path(char *system_path_commands[], char *cmd[])
 {
    int index = 1;
   while (cmd[index] != NULL)
