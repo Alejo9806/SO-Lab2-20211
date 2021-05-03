@@ -129,7 +129,7 @@ void wish()
         char *cmd[sizeof(str)];
 
         stringParse(str, cmd, 20);
-
+        printf("Comando: %s\n", cmd[0]);
         builtin_command command = str_to_command(str);
 
         if (command != not_command)
@@ -215,7 +215,6 @@ void batch(char *argv[])
             switch (command)
             {
             case cd:
-                printf("cd executed\n");
                 cdWish(cmd);
                 break;
             case path:
