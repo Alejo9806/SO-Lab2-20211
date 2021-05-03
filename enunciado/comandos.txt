@@ -1,4 +1,6 @@
-mkdir ayyaa & ls -a
-cd ./ayyaa
+mkdir nuevaCarpeta & ls -a
+cd ./nuevaCarpeta
+mkdir otraCarpetaDentro
+cd ../
 cd ../
 ls
