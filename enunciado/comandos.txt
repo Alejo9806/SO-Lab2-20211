@@ -1,0 +1,4 @@
+mkdir ayyaa & ls -a
+cd ./ayyaa
+cd ../
+ls
